@@ -1,0 +1,18 @@
+
+
+<div class="notification-list">
+    <div class="notification"
+         [ngClass]="{'active': notification.active}"
+         *ngFor="let notification of displayedNotifications; let i = index; trackBy:post?.id"
+         (mouseover)="hover(i)"
+         (mouseout)="blur(i)">
+        <h3>{{notification.title}}</h3>
+        <span class="notification-type">{{notification.type}}</span>
+        <div (click)="clickCheckMark(i)" class="img">
+            <img src="./assets/check.svg">
+        </div>
+    </div>
+    <div class="all-notifications" [ngClass]="{'active': isHovered}">
+        <h3>Alle notificaties ({{notifications.length}})</h3>
+    </div>
+</div>

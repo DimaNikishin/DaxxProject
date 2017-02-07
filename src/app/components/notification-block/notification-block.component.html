@@ -1,0 +1,10 @@
+<div class="notification-block" [ngClass]="{'opened': errorsAreDisplayed}" >
+    <img id="report-triangle" class="report-triangle" [src]="imgSource" (click)="toggleErrors()">
+    <span class="notification-sum">{{totalNotifications}}</span>
+    <app-notification-list
+        [hidden]="!errorsAreDisplayed"
+        [notifications]="notifications"
+        (onHover)="onHover($event)"
+        (onClickCheckMark)="onClickCheckMark($event)">
+    </app-notification-list>
+</div>
