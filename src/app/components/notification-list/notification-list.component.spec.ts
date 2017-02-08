@@ -20,10 +20,16 @@ describe('NotificationListComponent', () => {
     fixture = TestBed.createComponent(NotificationListComponent);
     component = fixture.componentInstance;
     component.notifications = [];
+    component.displayedNotifications = [{id: 0, title: 'Title of notification', type: 'TYPE OF NOTIFICATION', active:false},{id: 1, title: 'Title of notification', type: 'TYPE OF NOTIFICATION', active:false}]
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
 });
