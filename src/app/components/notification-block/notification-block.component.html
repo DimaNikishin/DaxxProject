@@ -4,6 +4,7 @@
     <app-notification-list
         [hidden]="!errorsAreDisplayed"
         [notifications]="notifications"
+        [animationState]="fadeIAnimationState"
         (onHover)="onHover($event)"
         (onClickCheckMark)="onClickCheckMark($event)"
         (click)="stopPropagationEvent($event)">

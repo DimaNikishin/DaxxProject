@@ -16,25 +16,27 @@ export class NotificationBlockComponent implements OnInit{
   errorsAreDisplayed:boolean = false;
   isHovered: boolean = false;
   imgSource: string = '/assets/report-problem-triangle.svg';
+  fadeIAnimationState:string = 'none';
 
   constructor(private notificationService: NotificationService) { }
 
   ngOnInit(): void {
     this.notificationService.getNotifications().subscribe(notification =>{
-        this.notifications = [...this.notifications,notification];
-        this.totalNotifications = this.notifications.length;
+      this.notifications = [...this.notifications,notification];
+      this.totalNotifications = this.notifications.length;
     });
   }
 
   onDocumentClick(event){
     if(event.target.localName === 'html'){
-        this.errorsAreDisplayed = false;
+      this.errorsAreDisplayed = false;
     }
 
   }
 
   toggleErrors(){
     this.errorsAreDisplayed = !this.errorsAreDisplayed;
+    this.fadeIAnimationState = this.errorsAreDisplayed ? 'in' : 'none';
   }
 
   stopPropagationEvent(event){
@@ -43,16 +45,16 @@ export class NotificationBlockComponent implements OnInit{
 
   onHover(isHover:boolean){
     if(isHover){
-        this.imgSource = '/assets/report-problem-triangle-green.svg';
+      this.imgSource = '/assets/report-problem-triangle-green.svg';
     }else{
-        this.imgSource = '/assets/report-problem-triangle.svg';
+      this.imgSource = '/assets/report-problem-triangle.svg';
     }
   }
 
   onClickCheckMark(id:number){
 
     this.notifications = this.notifications.filter((notification)=>{
-        return notification.id !=id;
+      return notification.id !=id;
     });
     this.notifications = [...this.notifications];
     this.totalNotifications = this.notifications.length;

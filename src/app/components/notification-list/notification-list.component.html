@@ -3,7 +3,8 @@
          [ngClass]="{'active': notification.active}"
          *ngFor="let notification of displayedNotifications; let i = index; trackBy:post?.id"
          (mouseover)="hover(i)"
-         (mouseout)="blur(i)">
+         (mouseout)="blur(i)"
+         [@fadeIn]="animationState">
         <h3>{{notification.title}}</h3>
         <span class="notification-type">{{notification.type}}</span>
         <div (click)="clickCheckMark(i)" class="img">
