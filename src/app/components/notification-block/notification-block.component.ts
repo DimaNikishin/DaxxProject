@@ -37,6 +37,10 @@ export class NotificationBlockComponent implements OnInit{
     this.errorsAreDisplayed = !this.errorsAreDisplayed;
   }
 
+  stopPropagationEvent(event){
+    event.stopPropagation()
+  }
+
   onHover(isHover:boolean){
     if(isHover){
         this.imgSource = '/assets/report-problem-triangle-green.svg';
