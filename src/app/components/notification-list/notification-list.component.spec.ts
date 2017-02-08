@@ -19,6 +19,7 @@ describe('NotificationListComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(NotificationListComponent);
     component = fixture.componentInstance;
+    component.notifications = [];
     fixture.detectChanges();
   });
 

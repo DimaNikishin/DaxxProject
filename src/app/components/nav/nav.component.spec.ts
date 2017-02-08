@@ -3,7 +3,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { NavComponent } from './nav.component';
+import { NavComponent } from '../nav/nav.component';
+import { NotificationBlockComponent } from '../notification-block/notification-block.component';
+import { NotificationListComponent } from '../notification-list/notification-list.component';
+import { NotificationService } from '../../services/notification-service/notification.service';
 
 describe('NavComponent', () => {
   let component: NavComponent;
@@ -11,7 +14,8 @@ describe('NavComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavComponent ]
+      declarations: [ NavComponent, NotificationBlockComponent, NotificationListComponent ],
+      providers: [NotificationService]
     })
     .compileComponents();
   }));

@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { NotificationBlockComponent } from './notification-block.component';
+import { NotificationListComponent } from '../notification-list/notification-list.component';
+import { NotificationService } from '../../services/notification-service/notification.service';
 
 describe('NotificationBlockComponent', () => {
   let component: NotificationBlockComponent;
@@ -11,7 +13,8 @@ describe('NotificationBlockComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NotificationBlockComponent ]
+      declarations: [ NotificationBlockComponent, NotificationListComponent ],
+      providers: [NotificationService]
     })
     .compileComponents();
   }));
